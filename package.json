@@ -1,0 +1,24 @@
+{
+  "name": "aromo-vecinos-svr",
+  "version": "1.0.0",
+  "description": "Web dinamica para vecinos del Aromo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabyCal07/Aromo-Vecinos-Svr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabyCal07/Aromo-Vecinos-Svr/issues"
+  },
+  "homepage": "https://github.com/GabyCal07/Aromo-Vecinos-Svr#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "postman-request": "^2.88.1-postman.30"
+  }
+}

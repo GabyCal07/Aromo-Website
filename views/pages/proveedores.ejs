@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/meta') %>    
+</head>    
+
+<body>
+    <header>
+        <%- include('../partials/navbar') %> 
+    </header>
+    
+    <main class="bg-light-gray py-4">       
+
+        <div class="container">
+            <div class="row ">
+                <div class="bg-light-green mb-5">
+                    <h1 class="section-title text-center pt-4"><%= category.toUpperCase() %></h1>
+                </div>
+                <% if (JSONBody.length === 0){ %>                     
+                    <h2 class="section-subtitle pb-4">No hay contactos recomendados</h2>
+                <% } %>
+                
+                <% JSONBody.forEach(proveedor =>{ %>                    
+                    
+                    <div class="col-xl-4 col-md-6 col-sm-12">                            
+                        <div class="card p-card my-3">                             
+                    
+                            <h5 class="card-title card-title-style text-light my-2"><%= proveedor.name %></h5>                               
+                            
+                            <div class="card-body p-card-body"> 
+                                                           
+                                <h6 class="card-subtitle fs-5 mb-3 text-muted"><%= proveedor.info %></h6>     
+                                <% if (proveedor.review.length > 0){ %>                    
+                                    
+                                    <h6 class="reviews-title-style my-4">Opiniones y comentarios  <i class="bi bi-plus-square plus-icon"></i></h6>
+
+                                    <div class="reviews hide-reviews">
+                                    <% for (let i=0; i < proveedor.review.length; i++){ %>                    
+                                        <p> <i class="bi bi-paperclip"></i><%= proveedor.user[i] %> - <span class="fst-italic">  "<%= proveedor.review[i] %>" </span> </p>
+                                    <% } %>   
+                                    </div>
+
+                                <% } %>       
+                                
+                            </div>
+                        </div>
+                    </div>  
+ 
+                <% }) %>   
+            </div>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+    
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
